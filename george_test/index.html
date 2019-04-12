@@ -1,0 +1,29 @@
+<html><head><style>.full {
+  position: absolute;
+  top: 0px;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
+}
+.container {
+  display: flex;
+  flex-direction: column;
+  background-color: red;
+  justify-content: center;
+  align-items: center;
+}
+.box {
+  background-color: grey;
+  width: 80%;
+  margin: 10px;
+  height: 80%;
+  -webkit-mask-image: url('alpha.png');
+  -webkit-mask-size: 100% 100%;
+  mask-image: url('alpha.png');
+}
+.overlay {
+  background: radial-gradient(circle, yellow, #096, purple);
+  opacity: 0.5;
+}</style></head><body><div class="container full"><div class="box"></div><div class="box"></div><div class="box"></div></div><div class="overlay full"></div><script>window.addEventListener('mouseover', e => {
+
+});</script></body></html>
