@@ -1,6 +1,14 @@
 html
   head
     style.
+      html {
+        background: black;
+      }
+      body {
+        overflow: hidden;
+        opacity: 0;
+        transition: opacity 1000ms;
+      }
       .full {
         position: absolute;
         top: 0px;
@@ -11,30 +19,106 @@ html
       .container {
         display: flex;
         flex-direction: column;
-        background-color: red;
+        background: url('friedrich.jpg');
+        background-size: cover;
+        background-color: #aaa;
+        background-blend-mode: overlay;
         justify-content: center;
         align-items: center;
+        transition: background 3000ms;
       }
       .box {
+        position: relative;
         background-color: grey;
-        width: 80%;
+        mix-blend-mode: multiply;
+        background: url('friedrich.jpg');
+        width: 95%;
         margin: 10px;
+        max-width: 100vh;
         height: 80%;
-        -webkit-mask-image: url('alpha.png');
+        -webkit-mask-image: url('alpha-better-min.png');
         -webkit-mask-size: 100% 100%;
-        mask-image: url('alpha.png');
+        -webkit-mask-position: center;
+        transition: opacity 2000ms, background 2000ms, -webkit-mask-size 2000ms, height 2000ms, width 3000ms;
+      }
+      .box:hover {
+        background-color: #359;
+        opacity: 0.8;
+        height: 50%;
+      }
+      .box.first {
+        mix-blend-mode: multiply;
+        background: grey;
+        opacity: 0.8;
+      }
+      .box.first .overlay {
+        mix-blend-mode: color-burn;
+        opacity: 1;
+        background: red;
+      }
+      .box.first:hover .overlay {
+        background: #f0a;
+      }
+      .box.second {
+        height: 150%;
+        margin-bottom: -1%;
+        margin-top: -1%;
+        mix-blend-mode: normal;
+        background-size: cover;
+        -webkit-mask-image: url('alpha-better-other-min.png');
+      }
+      .box.second .overlay {
+        opacity: 1;
+        background: black;
+        mix-blend-mode: normal;
+      }
+      .box.second:hover {
+        height: 170%;
+        background: blue;
+      }
+
+      .box.third {
+        opacity: 1;
+        background: grey;
+        -webkit-mask-image: url('alpha-better-another-min.png');
+      }
+      .box.third .overlay {
+        background: yellow;
+        opacity: 1;
+        mix-blend-mode: color-burn;
       }
       .overlay {
-        background: radial-gradient(circle, yellow, #096, purple);
-        opacity: 0.5;
+        background: red;
+        mix-blend-mode: multiply;
+        opacity: 0.8;
+        transition: background 2000ms;
       }
-  body
+      .mouse-overlay {
+        pointer-events: none;
+        mix-blend-mode: overlay;
+        width: 200vw;
+        height: 200vh;
+        background: radial-gradient(circle, yellow, #096, purple);
+        opacity: 0.3;
+      }
+  body(onload="document.body.style.opacity = 1")
     .container.full
-      .box
-      .box
-      .box
-    .overlay.full
-    script.
-      window.addEventListener('mouseover', e => {
+      .box.first
+        .overlay.full
+      .box.second
+        .overlay.full
+      .box.third
+        .overlay.full
 
+    .mouse-overlay.full
+    script.
+      document.addEventListener('mousemove', e => {
+        const { clientX: x, clientY: y } = e;
+        const {
+          innnerWidth: width,
+          innerHeight: height
+        } = window;
+        const $overlay = document.querySelector('.mouse-overlay');
+        $overlay.style.left = `calc(${x}px - 100vw)`;
+        $overlay.style.top = `calc(${y}px - 100vh)`;
       });
