@@ -36,12 +36,16 @@ body {
   -webkit-mask-image: url('alpha-better-min.png');
   -webkit-mask-size: 100% 100%;
   -webkit-mask-position: center;
-  transition: opacity 2000ms, background 2000ms, -webkit-mask-size 2000ms, height 2000ms, width 3000ms;
+  transition: opacity 20000s, background 20000s, height 20000s, width 30000s;
+}
+.box.second {
+  transition: opacity 2000ms, background 2000ms, height 3000ms, width 3000ms;
 }
 .box:hover {
   background-color: #359;
   opacity: 0.8;
   height: 50%;
+  transition: opacity 2000ms, background 2000ms, height 3000ms, width 3000ms;
 }
 .box.first {
   mix-blend-mode: multiply;
