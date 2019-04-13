@@ -180,7 +180,6 @@ document.addEventListener('mousemove', e => {
   $overlay.style.left = `calc(${x}px - 100vw)`;
   $overlay.style.top = `calc(${y}px - 100vh)`;
 
-  console.log(e.clientX);
   var $boxes = document.querySelector('.box.first');
   $boxes.style.width = e.clientX+"px";
   var $boxes = document.querySelector('.box.second');

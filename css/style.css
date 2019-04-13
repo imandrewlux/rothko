@@ -38,7 +38,7 @@ body{
 	
 }
 .box.first{
-	height: 60%;
+	height: 150%;
 	background: #fba72b;
   -webkit-mask-image: url('../img/topmask.png');
   -webkit-mask-size: 100% 100%;
@@ -50,7 +50,7 @@ body{
   mix-blend-mode: color-burn;
 }
 .box.second{
-	height: 27%;
+	height: 30%;
 	margin-top:-2%;
 	background: #a10c29;
 -webkit-mask-image: url('../img/alpha-soft.png');
