@@ -33,8 +33,9 @@ body{
 .box{
 	display: block;
 	width: 70%;
-	max-width: 850px;
-	/*transition: height 3000ms linear ;*/
+	max-width: 100%;
+	min-width: 10%;
+	
 }
 .box.first{
 	height: 60%;
@@ -42,6 +43,7 @@ body{
   -webkit-mask-image: url('../img/topmask.png');
   -webkit-mask-size: 100% 100%;
   -webkit-mask-position: center;
+  transition: width 5000ms linear;
 }
 .box.first .overlay{
 	opacity: 0;
@@ -51,9 +53,10 @@ body{
 	height: 27%;
 	margin-top:-2%;
 	background: #a10c29;
--webkit-mask-image: url('../img/bottommask.png');
+-webkit-mask-image: url('../img/alpha-soft.png');
   -webkit-mask-size: 100% 100%;
   -webkit-mask-position: center;
+  transition: width 10000ms linear;
 }
 .box.second .overlay{
 	opacity: 0;
@@ -64,6 +67,7 @@ body{
 -webkit-mask-image: url('../img/alpha-oily.png');
   -webkit-mask-size: 100% 100%;
   -webkit-mask-position: center;
+  transition: width 9000ms linear;
 }
 .box.third .overlay {
   background: yellow;
