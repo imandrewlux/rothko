@@ -1,0 +1,80 @@
+body{
+	margin:0;
+	padding:0;
+	height: 100%;
+	width: 100%;
+	display: none;
+	background-color: #000;
+	overflow: hidden;
+}
+.full {
+  position: absolute;
+  top: 0px;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
+}
+.container{
+	display: block;
+	width: 100vw;
+	height: 100vh;/*
+	background: -moz-radial-gradient(center, ellipse cover, #d3462a 0%, #c84b1d 73%, #89271c 100%);
+	background: -webkit-radial-gradient(center, ellipse cover, #d3462a 0%,#c84b1d 73%,#89271c 100%); 
+	background: radial-gradient(ellipse at center, #d3462a 0%,#c84b1d 73%,#89271c 100%);*/
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+  background: url('../img/friedrich.jpg');
+  background-size: cover;
+  background-color: #b7431c;
+  background-blend-mode: overlay;
+}
+.box{
+	display: block;
+	width: 70%;
+	max-width: 850px;
+	/*transition: height 3000ms linear ;*/
+}
+.box.first{
+	height: 60%;
+	background: #fba72b;
+  -webkit-mask-image: url('../img/topmask.png');
+  -webkit-mask-size: 100% 100%;
+  -webkit-mask-position: center;
+}
+.box.first .overlay{
+	opacity: 0;
+  mix-blend-mode: color-burn;
+}
+.box.second{
+	height: 27%;
+	margin-top:-2%;
+	background: #a10c29;
+-webkit-mask-image: url('../img/bottommask.png');
+  -webkit-mask-size: 100% 100%;
+  -webkit-mask-position: center;
+}
+.box.second .overlay{
+	opacity: 0;
+  mix-blend-mode: normal;
+}
+.box.third{
+	height: 0%;
+-webkit-mask-image: url('../img/alpha-oily.png');
+  -webkit-mask-size: 100% 100%;
+  -webkit-mask-position: center;
+}
+.box.third .overlay {
+  background: yellow;
+  opacity: 0;
+  mix-blend-mode: color-burn;
+}
+.mouse-overlay {
+  pointer-events: none;
+  mix-blend-mode: overlay;
+  width: 200vw;
+  height: 200vh;
+  background: radial-gradient(circle, yellow, #096, purple);
+  opacity: 0.3;
+}

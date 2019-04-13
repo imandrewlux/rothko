@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<head>
+  	<meta charset="utf-8">
+	<title>Rothko Example</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script src="js/anime.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<script src="js/script.js"></script>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+<div class="container full">
+    <div class="box first">
+      <div class="overlay full"></div>
+    </div>
+    <div class="box second">
+      <div class="overlay full"></div>
+    </div>
+    <div class="box third">
+        <div class="overlay full"></div>
+    </div>
+</div>
+<div class="mouse-overlay full"></div>
+	<script>
+var tl = anime.timeline({
+  easing: 'linear',
+  // duration: 70000,
+  loop: true,
+  delay: 5000,
+});
+
+// Add children
+tl
+.add({
+	targets: '.container',
+	duration: 40000,
+	backgroundColor: '#aaa',
+}, 0)
+.add({
+  targets: '.box.first',
+	duration: 40000,
+  background: '#808080',
+  height: '80%',
+
+}, 0)
+.add({
+  targets: '.box.first .overlay',
+	duration: 40000,
+  opacity: 1,
+  backgroundColor: '#ff0000',
+
+}, 0)
+.add({
+  targets: '.box.second',
+	duration: 40000,
+  height: '150%',
+  marginBottom: '-1%',
+  marginTop: '-1%',
+  maskImage: 'url(alpha-soft.png)',
+  backgroundColor: '#808080',
+},0)
+.add({
+  targets: '.box.second .overlay',
+	duration: 40000,
+  opacity: '1',
+  backgroundColor: '#000000',
+},0)
+.add({
+  targets: '.box.third',
+	duration: 40000,
+  opacity: '1',
+  backgroundColor: '#808080',
+  height: '80%',
+},0)
+.add({
+  targets: '.box.third .overlay',
+	duration: 40000,
+  opacity: '1',
+  backgroundColor: '#ffff00',
+},0)
+
+// thrid state goes here
+
+.add({
+	targets: '.container',
+	duration: 40000,
+	backgroundColor: '#b7431c',
+}, 40000)
+.add({
+  targets: '.box.first',
+	duration: 40000,
+  background: '#fba72b',
+  height: '60%',
+
+}, 40000)
+.add({
+  targets: '.box.first .overlay',
+	duration: 40000,
+  opacity: 0,
+  backgroundColor: 'rgba(255,255,255,0)',
+
+}, 40000)
+.add({
+  targets: '.box.second',
+	duration: 40000,
+  height: '27%',
+  marginBottom: '0',
+  marginTop: '-2%',
+  backgroundColor: '#a10c29',
+}, 40000)
+.add({
+  targets: '.box.second .overlay',
+	duration: 40000,
+  opacity: '0',
+  backgroundColor: 'rgba(255,255,255,0)',
+}, 40000)
+.add({
+  targets: '.box.third',
+	duration: 40000,
+  opacity: '0',
+  backgroundColor: 'rgba(255,255,255,0)',
+  height: '0%',
+}, 40000)
+.add({
+  targets: '.box.third .overlay',
+	duration: 40000,
+  opacity: '0',
+  backgroundColor: 'rgba(255,255,255,0)',
+},40000);
+
+
+	
+</script>
+</body>
+</html>
